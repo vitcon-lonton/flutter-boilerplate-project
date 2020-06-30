@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:boilerplate/data/local/data_sources/post/post_data_source.dart';
-import 'package:boilerplate/data/sharedpref/shared_preference_helper.dart';
+import 'package:boilerplate/data/shared_pref/shared_preference_helper.dart';
 import 'package:boilerplate/models/post/post.dart';
 import 'package:boilerplate/models/post/post_list.dart';
 import 'package:sembast/sembast.dart';
