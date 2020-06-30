@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ui/home/home.dart';
-import 'ui/login/login.dart';
-import 'ui/splash/splash.dart';
+import 'ui/index.dart';
 
 class Routes {
   Routes._();
@@ -18,6 +16,3 @@ class Routes {
     home: (BuildContext context) => HomeScreen(),
   };
 }
-
-
-

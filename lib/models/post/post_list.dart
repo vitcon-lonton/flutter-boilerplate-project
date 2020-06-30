@@ -1,4 +1,4 @@
-import 'package:boilerplate/models/post/post.dart';
+import 'package:boilerplate/models/index.dart';
 
 class PostList {
   final List<Post> posts;

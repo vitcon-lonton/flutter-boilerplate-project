@@ -5,7 +5,7 @@ import 'package:boilerplate/data/local/data_sources/post/post_data_source.dart';
 import 'package:boilerplate/data/network/apis/posts/post_api.dart';
 import 'package:boilerplate/data/repository.dart';
 import 'package:boilerplate/data/shared_pref/shared_preference_helper.dart';
-import 'package:boilerplate/utils/encryption/xxtea.dart';
+import 'package:boilerplate/utils/index.dart';
 import 'package:inject/inject.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';

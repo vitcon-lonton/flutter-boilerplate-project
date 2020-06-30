@@ -1,20 +1,13 @@
 import 'package:boilerplate/data/shared_pref/constants/preferences.dart';
 import 'package:boilerplate/routes.dart';
-import 'package:boilerplate/stores/form/form_store.dart';
-import 'package:boilerplate/utils/device/device_utils.dart';
-import 'package:boilerplate/utils/locale/app_localization.dart';
-import 'package:boilerplate/widgets/app_icon_widget.dart';
-import 'package:boilerplate/widgets/empty_app_bar_widget.dart';
-import 'package:boilerplate/widgets/progress_indicator_widget.dart';
-import 'package:boilerplate/widgets/rounded_button_widget.dart';
-import 'package:boilerplate/widgets/text_field_widget.dart';
+import 'package:boilerplate/stores/index.dart';
+import 'package:boilerplate/utils/index.dart';
+import 'package:boilerplate/widgets/index.dart';
 import 'package:flushbar/flushbar_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import '../../stores/theme/theme_store.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -203,7 +196,8 @@ class _LoginScreenState extends State<LoginScreen> {
           DeviceUtils.hideKeyboard(context);
           _store.login();
         } else {
-          _showErrorMessage('Please fill in all fields');
+          _showErrorMessage(AppLocalizations.of(context)
+              .translate('login_error_fill_fields'));
         }
       },
     );
