@@ -198,10 +198,7 @@ class _HomeScreenState extends State<HomeScreen> {
         enableFullWidth: true,
         title: Text(
           AppLocalizations.of(context).translate('home_tv_choose_language'),
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 16.0,
-          ),
+          style: TextStyle(color: Colors.white, fontSize: 16.0),
         ),
         headerColor: Theme.of(context).primaryColor,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,

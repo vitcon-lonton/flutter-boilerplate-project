@@ -9,7 +9,7 @@ class PostDataSource {
 
   // Private getter to shorten the amount of code needed to get the
   // singleton instance of an opened database.
-//  Future<Database> get _db async => await AppDatabase.instance.database;
+  // Future<Database> get _db async => await AppDatabase.instance.database;
 
   // database instance
   final Future<Database> _db;
