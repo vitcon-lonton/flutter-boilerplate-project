@@ -81,8 +81,8 @@ class MyApp extends StatelessWidget {
                 // Check if the current device locale is supported
                 supportedLocales.firstWhere(
                     (supportedLocale) =>
-                        supportedLocale.languageCode == locale.languageCode,
-                    orElse: () => supportedLocales?.first),
+                        supportedLocale.languageCode == locale?.languageCode,
+                    orElse: () => supportedLocales.first),
             home: SplashScreen(),
           );
         },
