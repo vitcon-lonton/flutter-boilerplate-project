@@ -6,70 +6,75 @@ part of 'post_store.dart';
 // StoreGenerator
 // **************************************************************************
 
-// ignore_for_file: non_constant_identifier_names, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
+// ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$PostStore on _PostStore, Store {
   Computed<bool> _$loadingComputed;
 
   @override
-  bool get loading =>
-      (_$loadingComputed ??= Computed<bool>(() => super.loading)).value;
+  bool get loading => (_$loadingComputed ??=
+          Computed<bool>(() => super.loading, name: '_PostStore.loading'))
+      .value;
 
   final _$fetchPostsFutureAtom = Atom(name: '_PostStore.fetchPostsFuture');
 
   @override
   ObservableFuture<PostList> get fetchPostsFuture {
-    _$fetchPostsFutureAtom.context.enforceReadPolicy(_$fetchPostsFutureAtom);
-    _$fetchPostsFutureAtom.reportObserved();
+    _$fetchPostsFutureAtom.reportRead();
     return super.fetchPostsFuture;
   }
 
   @override
   set fetchPostsFuture(ObservableFuture<PostList> value) {
-    _$fetchPostsFutureAtom.context.conditionallyRunInAction(() {
+    _$fetchPostsFutureAtom.reportWrite(value, super.fetchPostsFuture, () {
       super.fetchPostsFuture = value;
-      _$fetchPostsFutureAtom.reportChanged();
-    }, _$fetchPostsFutureAtom, name: '${_$fetchPostsFutureAtom.name}_set');
+    });
   }
 
   final _$postListAtom = Atom(name: '_PostStore.postList');
 
   @override
   PostList get postList {
-    _$postListAtom.context.enforceReadPolicy(_$postListAtom);
-    _$postListAtom.reportObserved();
+    _$postListAtom.reportRead();
     return super.postList;
   }
 
   @override
   set postList(PostList value) {
-    _$postListAtom.context.conditionallyRunInAction(() {
+    _$postListAtom.reportWrite(value, super.postList, () {
       super.postList = value;
-      _$postListAtom.reportChanged();
-    }, _$postListAtom, name: '${_$postListAtom.name}_set');
+    });
   }
 
   final _$successAtom = Atom(name: '_PostStore.success');
 
   @override
   bool get success {
-    _$successAtom.context.enforceReadPolicy(_$successAtom);
-    _$successAtom.reportObserved();
+    _$successAtom.reportRead();
     return super.success;
   }
 
   @override
   set success(bool value) {
-    _$successAtom.context.conditionallyRunInAction(() {
+    _$successAtom.reportWrite(value, super.success, () {
       super.success = value;
-      _$successAtom.reportChanged();
-    }, _$successAtom, name: '${_$successAtom.name}_set');
+    });
   }
 
-  final _$getPostsAsyncAction = AsyncAction('getPosts');
+  final _$getPostsAsyncAction = AsyncAction('_PostStore.getPosts');
 
   @override
   Future<dynamic> getPosts() {
     return _$getPostsAsyncAction.run(() => super.getPosts());
+  }
+
+  @override
+  String toString() {
+    return '''
+fetchPostsFuture: ${fetchPostsFuture},
+postList: ${postList},
+success: ${success},
+loading: ${loading}
+    ''';
   }
 }
