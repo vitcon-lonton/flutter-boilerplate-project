@@ -10,6 +10,7 @@ class PostApi {
   final DioClient _dioClient;
 
   // rest-client instance
+  // ignore: unused_field
   final RestClient _restClient;
 
   // injecting dio instance

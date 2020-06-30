@@ -1,6 +1,6 @@
 import 'package:boilerplate/data/repository.dart';
 import 'package:boilerplate/di/modules/local_module.dart';
-import 'package:boilerplate/di/modules/netwok_module.dart';
+import 'package:boilerplate/di/modules/network_module.dart';
 import 'package:boilerplate/di/modules/preference_module.dart';
 import 'package:boilerplate/main.dart';
 import 'package:inject/inject.dart';
@@ -15,10 +15,10 @@ abstract class AppComponent {
   MyApp get app;
 
   static Future<AppComponent> create(
-      NetworkModule networkModule,
-      LocalModule localModule,
-      PreferenceModule preferenceModule,
-      ) async {
+    NetworkModule networkModule,
+    LocalModule localModule,
+    PreferenceModule preferenceModule,
+  ) async {
     return await g.AppComponent$Injector.create(
       networkModule,
       localModule,

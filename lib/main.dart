@@ -2,7 +2,7 @@ import 'package:boilerplate/constants/app_theme.dart';
 import 'package:boilerplate/constants/strings.dart';
 import 'package:boilerplate/di/components/app_component.dart';
 import 'package:boilerplate/di/modules/local_module.dart';
-import 'package:boilerplate/di/modules/netwok_module.dart';
+import 'package:boilerplate/di/modules/network_module.dart';
 import 'package:boilerplate/di/modules/preference_module.dart';
 import 'package:boilerplate/routes.dart';
 import 'package:boilerplate/stores/language/language_store.dart';
@@ -44,7 +44,8 @@ class MyApp extends StatelessWidget {
   // with Hot Reload than creating it directly in the `build` function.
   final ThemeStore _themeStore = ThemeStore(appComponent.getRepository());
   final PostStore _postStore = PostStore(appComponent.getRepository());
-  final LanguageStore _languageStore = LanguageStore(appComponent.getRepository());
+  final LanguageStore _languageStore =
+      LanguageStore(appComponent.getRepository());
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +82,7 @@ class MyApp extends StatelessWidget {
                 supportedLocales.firstWhere(
                     (supportedLocale) =>
                         supportedLocale.languageCode == locale.languageCode,
-                    orElse: () => supportedLocales.first),
+                    orElse: () => supportedLocales?.first),
             home: SplashScreen(),
           );
         },
