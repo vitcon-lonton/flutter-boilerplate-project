@@ -1,5 +1,5 @@
-class Dimens {
-  Dimens._();
+class Dimension {
+  Dimension._();
 
   //for all screens
   static const double horizontal_padding = 12.0;

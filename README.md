@@ -121,7 +121,7 @@ lib/
 Now, lets dive into the lib folder which has the main code for the application.
 
 ```
-1- constants - All the application level constants are defined in this directory with-in their respective files. This directory contains the constants for `theme`, `dimentions`, `api endpoints`, `preferences` and `strings`.
+1- constants - All the application level constants are defined in this directory with-in their respective files. This directory contains the constants for `theme`, `dimension`, `api endpoints`, `preferences` and `strings`.
 2- data - Contains the data layer of your project, includes directories for local, network and shared pref/cache.
 3- stores - Contains store(s) for state-management of your application, to connect the reactive data of your application with the UI. 
 4- ui — Contains all the ui of your project, contains sub directory for each screen.
@@ -138,9 +138,9 @@ This directory contains all the application level constants. A separate file is 
 ```
 constants/
 |- app_theme.dart
-|- dimens.dart
-|- endpoints.dart
-|- preferences.dart
+|- dimension.dart
+|- colors.dart
+|- font_family.dart
 |- strings.dart
 ```
 
